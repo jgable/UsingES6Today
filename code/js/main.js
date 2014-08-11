@@ -7,63 +7,9 @@
     }
 
     var App = AppShim || {},
-        colors = [
-            // Dark blue
-            '213D55',
-            // Bright blue
-            '56B6D0',
-            // Pink
-            'E74C88',
-            
-            // Commented these out because bingos were getting kind of hard
-            /*
-            // Gray,
-            '9FA7AC',
-            // Greenish
-            '1CF49C',
-            // Purplish
-            'D77BDB'
-            */
-        ];
+        colors = App.colors;
 
     // *** Models
-
-    // A super simple box model
-    App.BoxModel = Backbone.Model.extend({
-        defaults: {
-            color: null
-        },
-
-        fetch: function () {
-            // Just generate a new color on fetch
-            
-            var currColor = this.get('color'),
-                newColor = _.sample(colors);
-
-            // Ensure a new color
-            while (newColor === currColor) {
-                newColor = _.sample(colors);
-            }
-
-            this.set('color', newColor);
-        },
-
-        startChanging: function (intervalDelay) {
-            // Start an interval to fetch every 600-3000 milliseconds
-            this.intervalDelay = intervalDelay || _.random(600, 3000);
-            this.interval = setInterval(this.fetch.bind(this), this.intervalDelay);
-        },
-
-        stopChanging: function () {
-            if (this.interval) {
-                clearInterval(this.interval);
-            }
-        },
-
-        remove: function () {
-            this.stopChanging();
-        }
-    });
 
     // *** Collections
 

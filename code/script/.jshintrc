@@ -15,5 +15,5 @@
   "unused": true,
   "trailing": true,
   "white": true,
-  "predef": ["$", "_", "Ember", "DS", "ic"]
+  "predef": []
 }
