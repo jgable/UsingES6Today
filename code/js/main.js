@@ -1,6 +1,12 @@
 (function ($, _, Backbone, undefined) {
 
-    var App = {},
+    // Detect the shim
+    var AppShim = require('app-shim');
+    if (AppShim && AppShim.default) {
+        AppShim = AppShim.default;
+    }
+
+    var App = AppShim || {},
         colors = [
             // Dark blue
             '213D55',
