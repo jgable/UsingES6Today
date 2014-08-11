@@ -1,0 +1,27 @@
+{
+  "name": "boxes",
+  "version": "1.0.0",
+  "authors": [
+    "Jacob Gable <jacob.gable@gmail.com>"
+  ],
+  "description": "A simple boxes app",
+  "main": "js/main.js",
+  "keywords": [
+    "boxes"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "backbone": "~1.1.2",
+    "lodash": "~2.4.1",
+    "animate.css": "~3.2.0"
+  }
+}

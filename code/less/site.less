@@ -1,0 +1,90 @@
+@import 'reset';
+@import 'animate';
+
+html {
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.header {
+	height: 40px;
+	margin: 20px 0;
+
+	.home-link {
+		opacity: 0;
+		font-size: 35px;
+		font-weight: 100;
+		line-height: 40px;
+
+		// Transition the background color changes
+		-webkit-transition: opacity 200ms linear;
+		-moz-transition: opacity 200ms linear;
+		-o-transition: opacity 200ms linear;
+		transition: opacity 200ms linear;
+
+		a {
+			opacity: 0.4;
+			text-decoration: none;
+
+			// Transition the background color changes
+			-webkit-transition: opacity 200ms linear;
+			-moz-transition: opacity 200ms linear;
+			-o-transition: opacity 200ms linear;
+			transition: opacity 200ms linear;
+
+			&:hover {
+				opacity: 1;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&:hover {
+		.home-link {
+			opacity: 1;
+		}
+	}
+}
+
+.main {
+	&-title {
+		text-align: center;
+		font-size: 50px;
+		font-weight: 100;
+	}
+}
+
+.boxes {
+	margin: 20px auto;
+	min-height: 200px;
+	
+	&-box {
+		float: left;
+		width: 190px;
+		height: 190px;
+		margin: 5px;
+
+		// Transparent by default
+		background-color: transparent;
+
+		// Make space for the border in case we want to highlight them later
+		border: solid 2px transparent;
+
+		// Transition the background color changes
+		-webkit-transition: background-color 400ms linear;
+		-moz-transition: background-color 400ms linear;
+		-o-transition: background-color 400ms linear;
+		transition: background-color 400ms linear;
+	}
+}
+
+.bingos-count {
+	text-align: center;
+	font-size: 30px;
+	font-weight: 100;
+}
+
