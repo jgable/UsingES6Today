@@ -15,7 +15,7 @@ html {
 	margin: 20px 0;
 
 	.home-link {
-		opacity: 0;
+		opacity: 0.4;
 		font-size: 35px;
 		font-weight: 100;
 		line-height: 40px;
@@ -25,6 +25,11 @@ html {
 		-moz-transition: opacity 200ms linear;
 		-o-transition: opacity 200ms linear;
 		transition: opacity 200ms linear;
+
+		&-slides, &-code {
+			float: right;
+			margin-left: 10px;
+		}
 
 		a {
 			opacity: 0.4;
