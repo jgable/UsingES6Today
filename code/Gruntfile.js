@@ -17,8 +17,8 @@ module.exports = function (grunt) {
 						'bower_components/jquery/dist/jquery.min.js',
 						'bower_components/lodash/dist/lodash.min.js',
 						'bower_components/backbone/backbone.js',
-						'lib/traceur.js',
-						'lib/es6-module-loader.js'
+						'bower_components/traceur/traceur.js',
+						'bower_components/es6-module-loader/dist/es6-module-loader.js'
 					]
 				}
 			},
