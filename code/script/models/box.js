@@ -1,13 +1,17 @@
 import { Backbone, _ } from 'vendor/shim';
 import colors from 'util/colors';
 
-// A super simple box model
-export default Backbone.Model.extend({
-    defaults: {
-        color: null
-    },
+var { Model } = Backbone;
 
-    fetch: function () {
+// A super simple box model
+class Box extends Model {
+    defaults() {
+        return {
+            color: null
+        };
+    }
+
+    fetch() {
         // Just generate a new color on fetch
         
         var currColor = this.get('color'),
@@ -19,21 +23,23 @@ export default Backbone.Model.extend({
         }
 
         this.set('color', newColor);
-    },
+    }
 
-    startChanging: function (intervalDelay) {
+    startChanging(intervalDelay) {
         // Start an interval to fetch every 600-3000 milliseconds
         this.intervalDelay = intervalDelay || _.random(600, 3000);
         this.interval = setInterval(this.fetch.bind(this), this.intervalDelay);
-    },
+    }
 
-    stopChanging: function () {
+    stopChanging() {
         if (this.interval) {
             clearInterval(this.interval);
         }
-    },
+    }
 
-    remove: function () {
+    remove() {
         this.stopChanging();
     }
-});
+}
+
+export default Box;

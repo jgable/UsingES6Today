@@ -17,7 +17,8 @@ module.exports = function (grunt) {
 						'bower_components/jquery/dist/jquery.min.js',
 						'bower_components/lodash/dist/lodash.min.js',
 						'bower_components/backbone/backbone.js',
-						'bower_components/almond/almond.js'
+						'lib/traceur.js',
+						'lib/es6-module-loader.js'
 					]
 				}
 			},
@@ -28,12 +29,16 @@ module.exports = function (grunt) {
 			main: {
 				files: {
 					'assets/js/main.js': [
-						// Grab the ES6 shim first
-						'assets/script/app-built.js',
 						// Just grab all js files for right now
 						'js/*.js'
 					]
 				}
+			}
+		},
+		copy: {
+			script: {
+				src: 'script/**/*.js',
+				dest: 'assets/script'
 			}
 		},
 		connect: {
